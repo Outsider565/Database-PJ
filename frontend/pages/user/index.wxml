@@ -1,0 +1,91 @@
+<!--pages/user/index.wxml-->
+<link rel="preconnect" href="https://fonts.gstatic.com"/>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet"/>
+<view class="headerCard">
+	<van-row>
+		<van-col span="8">
+			<view class="userImgContainer">
+				<image class="userImg" src="{{userImgsrc}}"></image>
+			</view>
+		</van-col>
+		<van-col span="16" custom-class="infoContainer">
+			<van-row wx:if="{{isLogin === true}}">
+					<van-col span="24">
+					<view class="userName">
+						<p>{{userName}}</p>
+					</view>
+				</van-col>
+			</van-row>
+			<van-row wx:else custom-class="LoginHelpText">
+				<van-col span="24">
+					<p>登录开启学习之旅~</p>
+				</van-col>
+			</van-row>
+
+			<van-row wx:if="{{isStudy === true && isLogin === true}}">
+				<van-col span="24">
+					<view class="IconContianer">
+						<van-icon class="Icon" color="#ff4757" size="25px" name="location" />
+						<text class="IconText">您目前在 {{userCls}} 自习</text>
+					</view>
+				</van-col>
+				<van-col span="24">
+					<view class="IconContianer">
+						<van-icon class="Icon" color="#ff4757" size="23px" name="clock" />
+						<van-count-up format="HH 时 mm 分 ss 秒" bind:change="onChange">
+								<text class="timeText">{{ timeData.hours }}</text>
+								<text class="timeText">{{ timeData.minutes }}</text>
+								<text class="timeText">{{ timeData.seconds }}</text>
+						</van-count-up>
+					</view>
+				</van-col>
+			</van-row>
+			<van-row wx:elif="{{isLogin === true && isStudy === false}}">
+				<van-col span="24">
+					<view class="IconContianer">
+						<van-icon class="Icon" color="#ff4757" size="50rpx" name="medal-o" />
+						<text class="IconText">称号：{{ Rate }}</text>
+					</view>
+				</van-col>
+				<van-col span="24">
+					<view class="IconContianer">
+						<van-icon class="Icon" color="#ff4757" size="50rpx" name="clock-o" />
+						<text class="IconText">自习时长：{{studyTime}}</text>
+					</view>
+				</van-col>
+			</van-row>
+		</van-col>
+	</van-row>
+
+	<van-row wx:if="{{isStudy === true && isLogin === true}}">
+		<van-col span="24">
+			<van-button plain custom-style="font-size: 18px;" icon="pause" size="large" class="Btn" round type="warning" bindtap="stopStudy">停止学习</van-button>
+		</van-col>
+	</van-row>
+	<view class="noLogin" wx:if="{{!isLogin === true}}">
+		<van-button 
+		plain 
+		custom-style="font-size: 18px;" 
+		icon="checked" 
+		size="large" 
+		class="Btn" 
+		round 
+		type="info" 
+		lang="zh_CN" 
+		open-type="getUserInfo"
+		bindgetuserinfo="clickLogin">点击登录</van-button>
+		<van-toast id="toast" />
+	</view>
+</view>
+
+<van-toast id="van-toast" />
+
+<view class="bodyCard" wx-if="{{isLogin === true}}">
+	<van-cell-group custom-class="selectCellGroup">
+			<van-cell class="topCell" center icon="contact" size="large" title="个人信息" is-link="true" url="" bindtap="handleUserInfoClick"></van-cell>
+			<van-cell center icon="setting-o" size="large" title="设置" is-link="true" url="" bindtap="handleSettingClick"></van-cell>
+			<van-cell center icon="smile-comment-o" size="large" title="关于我们" is-link="true" url="" bindtap="handleAboutClick" border="{{ false }}"></van-cell>
+	</van-cell-group>
+</view>
+
+

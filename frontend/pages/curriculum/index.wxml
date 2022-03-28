@@ -1,0 +1,109 @@
+<image src="../../src/banner/clsBanner.png" class="banner"></image>
+
+<van-action-sheet
+  show="{{ dayPickerShow }}"
+>
+  <van-picker
+    show-toolbar
+    title="选择上课时间"
+    columns="{{ dayColumns }}"
+    bind:cancel="onDayCancel"
+    bind:confirm="onDayConfirm"
+  />
+</van-action-sheet>
+
+<van-action-sheet
+  show="{{ timePicker1Show }}"
+>
+  <van-picker
+    show-toolbar
+    title="选择开始时间"
+    columns="{{ timeColumns }}"
+    bind:cancel="onTime1Cancel"
+    bind:confirm="onTime1Confirm"
+  />
+</van-action-sheet>
+
+<van-action-sheet
+  show="{{ timePicker2Show }}"
+>
+  <van-picker
+    show-toolbar
+    title="选择结束时间"
+    columns="{{ timeColumns }}"
+    bind:cancel="onTime2Cancel"
+    bind:confirm="onTime2Confirm"
+  />
+</van-action-sheet>
+
+<van-popup custom-class="popupBlk" round show="{{ showAddCls }}" bind:close="hideAddCls">
+  <view class="addClsBlock">
+    <text class="addClsTitle">自定义添加课程</text>
+    <van-cell-group>
+      <van-field
+        value="{{ customCourseName }}"
+        label="课程名"
+        label-class="titleClass"
+        placeholder="请输入课程名"
+        border="{{ true }}"
+        bind:change="onCourseNameChange"
+      >
+        <van-icon slot="left-icon" name="edit" size="24" style="margin-right: 5px"/>
+      </van-field>
+      <van-cell clickable center title-class="titleClass" title="课程星期" value="{{ customCourseDay.value }}" bindtap="onDisplayDayPicker">
+        <van-icon slot="icon" name="notes-o" size="22" style="margin-right: 6px"/>
+      </van-cell>
+      <van-cell clickable center title-class="titleClass" title="课程时间段" value="{{ customCourseTime }}" bindtap="onDisplayTimePicker">
+        <van-icon slot="icon" name="clock-o" size="22" style="margin-right: 6px"/>
+      </van-cell>
+    </van-cell-group>
+    <van-button 
+      class="btn" 
+      bindtap="onAddClsBtnTap" plain round hairline 
+      custom-style="font-size: 18px; border: none!important" 
+      size="normal" 
+      icon="checked" 
+      type="primary">
+          添加到课表
+    </van-button>
+    <!--  <text class="helpInfo">可以去搜索课程快速添加课程哦~</text> -->
+  </view>
+</van-popup>
+ 
+ <view class="bodyCard">
+ 
+    <view class="headerBlock">
+      <text class="currentDate">{{ currentDate }}</text>
+      <van-icon class="headIcon" color="#576574" size="25px" name="add-o" bindtap="addCls" />
+    </view>
+    <view wx:if="{{ courseEntityList.length === 0 }}">
+      <van-cell custom-class="cellClass" center size="large" title="今天没有课程">
+        <van-icon slot="icon" size="24" name="todo-list-o" style="margin-right: 8px" />
+      </van-cell>
+    </view>
+    <van-swipe-cell 
+    wx:key="unique" 
+    wx:for="{{ courseEntityList }}" 
+    id="{{ index }}"
+    right-width="{{ 65 }}" 
+    bind:click="onDeleteCourse">
+        <van-cell 
+        clickable
+        use-label-slot 
+        title="{{ item.CourseName }}"
+        title-class="cellTitleClass"
+        title-width="200px" 
+        value="{{ item.CourseId }}" >
+          <view slot="label">
+            <van-icon name="manager" style="margin-left: 2px"/>
+            <text class="teacherNameText">{{ item.TeacherName ? item.TeacherName : '暂无' }}</text>
+            <text style="margin-left: 10px">【{{ item.CourseTimeTag[0] }} ~ {{ item.CourseTimeTag[1] }}】</text>
+            <text wx:if="{{ item.StudentNum > 0 }}" class="stuNumText">学生数: {{ item.StudentNum }}</text>
+          </view>
+        </van-cell>
+        <view slot="right" class="cellDeleteTag">删除</view>
+    </van-swipe-cell>
+</view>
+
+<van-toast id="van-toast" />
+<view class="footer"></view>

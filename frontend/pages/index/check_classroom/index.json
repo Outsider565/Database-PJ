@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-search": "../../../src/dist/search/index",
+    "van-divider": "../../../src/dist/divider/index",
+    "van-cell": "../../../src/dist/cell/index",
+    "van-cell-group": "../../../src/dist/cell-group/index",
+    "van-toast": "../../../src/dist/toast/index",
+    "van-icon": "../../../src/dist/icon/index"
+  },
+  "disableScroll": true
+}

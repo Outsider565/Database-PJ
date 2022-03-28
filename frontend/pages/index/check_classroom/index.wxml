@@ -1,0 +1,40 @@
+<!--pages/index/check_classroom/index.wxml-->
+<view class="searchClass">
+  <van-search 
+    value="{{ searchValue }}" 
+    bind:change="onSearchChange" 
+    bind:search="onSearch" 
+    bind:clear="onSearchClear" 
+    placeholder="请输入教室代码" > 
+  </van-search>
+</view>
+
+<van-toast id="van-toast" />
+<image src="../../../src/banner/searchBanner.png" class="banner"></image>
+
+<text wx:if="{{ !isSearch }}" class="InfoText">输入教室代码查询课表</text>
+<view wx:else class="headerCard">
+  <scroll-view class="scroll-view_H" scroll-y="{{ true }}" style="height: 650rpx;">
+    <van-cell-group>
+      <van-cell 
+        clickable
+        use-label-slot 
+        bindtap="onCellTap"
+        id="{{index}}"
+        wx:for="{{ ClsList }}" 
+        wx:key='unique'
+        title="【{{ timeColumns[index] }}】{{ item.CourseName }}"
+        title-class="cellTitleClass"
+        title-width="200px" 
+        value="{{ item.CourseId }}" >
+        <view slot="label" wx:if="{{item.CourseId}}">
+          <van-icon name="manager" style="margin-left: 10px"/>
+          <text class="teacherNameText">{{ item.TeacherName ? item.TeacherName : '暂无' }}</text>
+          <text class="stuNumText">学生数: {{ item.StudentNum }}</text>
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </scroll-view>
+</view>
+
+

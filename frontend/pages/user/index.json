@@ -1,0 +1,14 @@
+{
+  "backgroundColor": "#eeeeee",
+  "usingComponents": {
+    "van-cell": "../../src/dist/cell/index",
+    "van-cell-group": "../../src/dist/cell-group/index",
+    "van-button": "../../src/dist/button/index",
+    "van-icon": "../../src/dist/icon/index",
+    "van-row": "../../src/dist/row/index",
+    "van-col": "../../src/dist/col/index",
+    "van-count-up": "../../src/dist/count-up/index",
+    "van-toast": "../../src/dist/toast/index",
+    "van-skeleton": "../../src/dist/skeleton/index"
+  }
+}

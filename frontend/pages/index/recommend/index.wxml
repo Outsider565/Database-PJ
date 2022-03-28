@@ -1,0 +1,18 @@
+<!--pages/recommend/index.wxml-->
+<image src="../../../src/banner/recBanner.png" class="banner"></image>
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+
+<view class="bodyCard" wx:if="{{clsList.length != 0}}">
+  <text class="recInfoText">推荐您去以下教室自习</text>
+  <view class="tagContainer">
+    <van-tag id="{{ item }}" bindtap="startStudy" custom-class="tags" wx:key="unique" wx:for="{{clsList}}" round size="large" type="primary">{{item}}</van-tag>
+  </view>
+  <text class="infoText">tips: 点击教室标签，可以进入教室自习哦</text>
+</view>
+<view class="bodyCard" wx:else>
+  <text class="recInfoText">出错了! 请重新尝试</text>
+</view>
+
+

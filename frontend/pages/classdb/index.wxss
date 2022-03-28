@@ -1,0 +1,137 @@
+/* pages/classdb/index.wxss */
+page{
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+}
+
+.mainCard{
+  position: fixed;
+  display: block;
+  margin-top: 3%;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  background-color: white;
+  height: auto;
+  width: 92vw;
+  margin-inline: 4vw;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px #cccccc;
+  z-index: -1;
+}
+
+.InfoText{
+  display: flex;
+  color: #192a56;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'ZCOOL_h', cursive;
+  justify-content: center;
+  margin-top: 40px;
+  font-size: 40px;
+  z-index: -1;
+}
+
+.commEle{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 350rpx;
+  max-height: 200px;
+  width: 350rpx;
+  max-width: 200px;
+  transform: translate(18%, -50%);
+  z-index: 99;
+}
+
+.workEle2{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 350rpx;
+  max-height: 200px;
+  width: 350rpx;
+  max-width: 200px;
+  transform: translate(-10%, -42%);
+  z-index: 99;
+}
+
+.planetEle{
+  position: fixed;
+  height: 750rpx;
+  width: 750rpx;
+  transform: translateY(-20%);
+  z-index: -1;
+}
+
+.searchRelateContainer{
+  background-color: white;
+  box-shadow: 0 3px 6px #cccccc;
+  padding-bottom: 12px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.stuNumText{
+  position: absolute;
+  right: 40rpx;
+}
+
+.teacherNameText{
+  padding-inline: 5px;
+}
+
+.clsDetailBlock{
+  width: 620rpx;
+  height: fit-content;
+  padding: 10px;
+}
+
+.clsDetailTitle{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.valueClass{
+  position: fixed;
+  width: 150px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  right: 50rpx;
+  font-size: 16px;
+  color: #222222!important;
+}
+
+.titleClass{
+  font-size: 18px;
+  color: black!important;
+}
+
+.cellTitleClass{
+  width: 200px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.popupBlk{
+  top: 36%!important;
+  left: 50%!important;
+  -webkit-transform: translate3d(-50%, -36%, 0)!important;
+  transform: translate3d(-50%, -36%, 0)!important;
+}
+
+
+.btnTitleClass{
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.btn{
+  margin-top: 5px;
+}

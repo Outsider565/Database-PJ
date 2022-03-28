@@ -1,0 +1,125 @@
+/**index.wxss**/
+page{
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+}
+
+
+.headerCard{
+  margin-top: 3%;
+  margin-bottom: 15px;
+  background-color: white;
+  height: auto;
+  width: 92vw;
+  margin-inline: 4vw;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px #cccccc;
+}
+
+.bodyCard{
+  margin-top: 3%;
+  margin-bottom: 15px;
+  background-color: white;
+  height: auto;
+  padding-bottom: 20px;
+  width: 92vw;
+  margin-inline: 4vw;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px #cccccc;
+}
+
+.Line1{
+  margin-left: 5%;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.BtnRow{
+  margin-top: 15px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.leftBlock{
+  padding-top: 10px;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  border-right: .5px solid #eeeeee;
+  padding-bottom: 60px;
+}
+
+.rightBlock{
+  padding-top: 10px;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.recText{
+  position: absolute;
+  margin-top: 80px;
+  font-family: 'ZCOOL';
+  font-size: 18px;
+}
+
+.checkText{
+  position: absolute;
+  margin-top: 80px;
+  font-family: 'ZCOOL';
+  font-size: 18px;
+}
+
+.Text1{
+  margin-left: 12%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
+}
+
+.text1{
+  display: block;
+  width: 100px;
+}
+
+.Line2{
+  margin-left: 5%;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+van-circle:active::before {
+  background-color: black;
+  opacity: 0.1;
+}
+
+/* .circle::before {
+  z-index: 10;
+  position: absolute;
+  scale: 1.1;
+  width: 90px;
+  height: 90px;
+  background-color: #000;
+  border-radius: 50px;
+  opacity: 0;
+  content: ' ';
+}
+
+.circle:active::before {
+  opacity: 0.1;
+} */

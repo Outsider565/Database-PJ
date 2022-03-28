@@ -1,0 +1,21 @@
+{
+  "usingComponents": {
+    "van-datetime-picker": "../../../src/dist/datetime-picker/index",
+    "van-dialog": "../../../src/dist/dialog/index",
+    "van-popup": "../../../src/dist/popup/index",
+    "van-toast": "../../../src/dist/toast/index",
+    "van-action-sheet": "../../../src/dist/action-sheet/index",
+    "van-icon": "../../../src/dist/icon/index",
+    "van-button": "../../../src/dist/button/index",
+    "van-radio": "../../../src/dist/radio/index",
+    "van-radio-group": "../../../src/dist/radio-group/index",
+    "van-checkbox": "../../../src/dist/checkbox/index",
+    "van-checkbox-group": "../../../src/dist/checkbox-group/index",
+    "van-tag": "../../../src/dist/tag/index",
+    "van-row": "../../../src/dist/row/index",
+    "van-col": "../../../src/dist/col/index",
+    "van-calendar": "../../../src/dist/calendar/index",
+    "van-cell": "../../../src/dist/cell/index",
+    "van-cell-group": "../../../src/dist/cell-group/index"
+  }
+}

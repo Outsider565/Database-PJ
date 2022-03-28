@@ -1,0 +1,12 @@
+<!--custum_tabbar/index.wxml-->
+<van-tabbar
+  active="{{ active }}"
+  active-color="#4834d4"
+  inactive-color="#000"
+  bind:change="onChange"
+>
+  <van-tabbar-item safe-area-inset-bottom="false" icon="home-o">首页</van-tabbar-item>
+  <van-tabbar-item safe-area-inset-bottom="false" icon="notes-o">课程</van-tabbar-item>
+  <van-tabbar-item safe-area-inset-bottom="false" icon="calendar-o">课表</van-tabbar-item>
+  <van-tabbar-item safe-area-inset-bottom="false" icon="friends-o">用户</van-tabbar-item>
+</van-tabbar>

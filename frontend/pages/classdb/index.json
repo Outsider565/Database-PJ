@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-search": "../../src/dist/search/index",
+    "van-notify": "../../src/dist/notify/index",
+    "van-toast": "../../src/dist/toast/index",
+    "van-cell": "../../src/dist/cell/index",
+    "van-cell-group": "../../src/dist/cell-group/index",
+    "van-icon": "../../src/dist/icon/index",
+    "van-button": "../../src/dist/button/index",
+    "van-popup": "../../src/dist/popup/index"
+  },
+  "disableScroll": true
+}

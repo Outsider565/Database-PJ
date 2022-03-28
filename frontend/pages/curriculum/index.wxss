@@ -1,0 +1,131 @@
+/* pages/search/index.wxss */
+page {
+  background-color: #eeeeee;
+}
+
+.headerCard{
+  margin-top: 3%;
+  margin-bottom: 15px;
+  background-color: white;
+  height: auto;
+  width: 92vw;
+  margin-inline: 4vw;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px #cccccc;
+}
+
+.bodyCard{
+  transform: translateY(-390rpx);
+  margin-top: 3%;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  background-color: white;
+  height: auto;
+  width: 92vw;
+  margin-inline: 4vw;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px #cccccc;
+}
+
+.calendar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.footer{
+  height: 80px;
+}
+
+.headerBlock{
+  display: inline;
+  padding: 15px;
+  display: flex;
+  height: 30px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.headIcon{
+  position: fixed;
+  right: 5%;
+}
+
+.currentDate{
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.banner{
+  justify-content: center;
+  height: 750rpx;
+  width: 750rpx;
+  z-index: 0;
+  transform: translateY(-180rpx);
+}
+
+.addClsBlock{
+  width: 620rpx;
+  height: fit-content;
+  padding: 10px;
+}
+
+.addClsTitle{
+  display: block;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.helpInfo{
+  display: block;
+  padding: 12px;
+  font-size: 30rpx;
+  color: gray;
+}
+
+.titleClass{
+  color: black;
+  size: 18px
+}
+
+.chooseTimeLabel{
+  color: black;
+}
+
+.cellClass{
+  border-radius: 10px;
+}
+
+.cellTitleClass{
+  width: 200px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.popupBlk{
+  top: 35%!important;
+  left: 50%!important;
+  -webkit-transform: translate3d(-50%, -35%, 0)!important;
+  transform: translate3d(-50%, -35%, 0)!important;
+}
+
+.cellDeleteTag{
+  display: flex;
+  width: 65px;
+  height: 100%;
+  color: white;
+  font-size: 18px;
+  line-height: 60px;
+  justify-content: center;
+  background-color: #f7364f;
+}
+
+.stuNumText{
+  position: absolute;
+  right: 40rpx;
+}
+
+.teacherNameText{
+  padding-inline: 5px;
+}

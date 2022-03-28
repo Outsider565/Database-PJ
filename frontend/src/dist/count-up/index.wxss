@@ -1,0 +1,11 @@
+@import '../common/index.wxss';
+
+.van-count-up {
+  color: #323233;
+  color: var(--count-up-text-color, #323233);
+  font-size: 15px;
+  padding-inline: 5px;
+  font-size: var(--count-up-font-size, 16px);
+  line-height: 25px;
+  line-height: var(--count-up-line-height, 25px)
+}

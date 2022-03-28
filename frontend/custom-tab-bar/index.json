@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-tabbar": "../src/dist/tabbar/index",
+    "van-tabbar-item": "../src/dist/tabbar-item/index"
+  }
+}

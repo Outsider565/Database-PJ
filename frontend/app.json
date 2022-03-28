@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classdb/index",
+    "pages/curriculum/index",
+    "pages/user/index",
+    "pages/index/recommend/index",
+    "pages/index/empty_classroom/index",
+    "pages/index/check_classroom/index"
+  ],
+  "window": {
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#eeeeee",
+    "navigationBarTitleText": "GoStudy 智能自习推荐",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "backgroundColor": "#eeeeee",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/classdb/index",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/curriculum/index",
+        "text": "课表"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "用户"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "智能推荐会根据您的当前位置和偏好推荐教室"
+    }
+  }
+}

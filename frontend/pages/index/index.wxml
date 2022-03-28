@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="headerCard">
+  <view class="BtnRow">
+    <view class="leftBlock" bindtap="ReCommend">
+      <van-icon custom-style="Recommend" size="60" name="../../icon/indexIcon/rocket.png" />
+      <text class="recText">智能推荐教室</text>
+    </view>
+    <view class="rightBlock" bindtap="CheckCls">
+      <van-icon custom-style="CheckClass" size="60" name="../../icon/indexIcon/checklist.png" />
+      <text class="checkText">查询教室课表</text>
+    </view>
+  </view>
+</view>
+<!-- 可以用 wx:for 改写，不过就有限个，直接这样写了 -->
+<view class="bodyCard">
+  <view class="Diagram">
+    <van-row custom-class="Line1">
+      <van-col span="8"><van-circle class="circle" id="H2" bindtap="checkEmpty" size="{{ circleSz }}" value="{{ upboundData.H2 - volumeData.H2 }}" color="{{ gradientColor }}" text="二教" /></van-col>
+      <van-col span="8"><van-circle class="circle" id="H3NoH30" bindtap="checkEmpty" size="{{ circleSz }}" value="{{ upboundData.H3NoH30 - volumeData.H3NoH30 }}" color="{{ gradientColor }}" text="三教" /></van-col>
+      <van-col span="8"><van-circle class="circle" id="H4" bindtap="checkEmpty" size="{{ circleSz }}" value="{{ upboundData.H4 - volumeData.H4 }}" color="{{ gradientColor }}" text="四教" /></van-col> 
+    </van-row>
+    <van-row custom-class="Text1">
+      <van-col span="8"><text class="text1">{{ volumeData.H2 }} 空闲</text></van-col>
+      <van-col span="8"><text class="text1">{{ volumeData.H3NoH30 }} 空闲</text></van-col>
+      <van-col span="8"><text class="text1">{{ volumeData.H4 }} 空闲</text></van-col> 
+    </van-row>
+    <van-divider />
+    <van-row custom-class="Line2">
+      <van-col span="8"><van-circle class="circle" id="H5" bindtap="checkEmpty" size="{{ circleSz }}" value="{{ upboundData.H5 -  volumeData.H5 }}" color="{{ gradientColor }}" text="五教" /></van-col>
+      <van-col span="8"><van-circle class="circle" id="H6" bindtap="checkEmpty" size="{{ circleSz }}" value="{{ upboundData.H6 - volumeData.H6 }}" color="{{ gradientColor }}" text="六教" /></van-col>
+      <van-col span="8"><van-circle class="circle" id="HGX" bindtap="checkEmpty" size="{{ circleSz }}" value="{{ upboundData.HGX - volumeData.HGX }}" color="{{ gradientColor }}" text="西辅楼" /></van-col> 
+    </van-row>
+    <van-row custom-class="Text1">
+      <van-col span="8"><text class="text1">{{ volumeData.H5 }} 空闲</text></van-col>
+      <van-col span="8"><text class="text1">{{ volumeData.H6 }} 空闲</text></van-col>
+      <van-col span="8"><text class="text1">{{ volumeData.HGX }} 空闲</text></van-col> 
+    </van-row>
+  </view>
+</view>

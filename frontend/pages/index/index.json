@@ -1,0 +1,12 @@
+{
+  "backgroundColor": "#eeeeee",
+  "usingComponents": {
+    "van-toast": "../../src/dist/toast/index",
+    "van-circle": "../../src/dist/circle/index",
+    "van-row": "../../src/dist/row/index",
+    "van-col": "../../src/dist/col/index",
+    "van-divider": "../../src/dist/divider/index",
+    "van-icon": "../../src/dist/icon/index",
+    "van-image": "../../src/dist/image/index"
+  }
+}

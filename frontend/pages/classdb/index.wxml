@@ -1,0 +1,69 @@
+<van-search value="{{ searchValue }}" bind:change="onSearchChange" bind:search="onSearch" bind:clear="onSearchClear" placeholder="请输入课程关键词 / 课程代码" > 
+</van-search>
+
+<van-popup custom-class="popupBlk" round show="{{ showClsDetail }}" bind:close="hideClsDetail">
+  <view class="clsDetailBlock">
+    <text class="clsDetailTitle">课程信息</text>
+    <van-cell-group>
+      <van-cell center icon="label" value-class="valueClass" title-class="titleClass" title="课程名称" value="{{ curCls.CourseName}}" />
+      <van-cell center icon="weapp-nav" value-class="valueClass" title-class="titleClass" title="课程代号" value="{{ curCls.CourseId}}" />
+      <van-cell center icon="manager" value-class="valueClass" title-class="titleClass" title="教师" value="{{ curCls.TeacherName}}" />
+      <van-cell center icon="wap-home" value-class="valueClass" title-class="titleClass" title="教室" value="{{ curCls.Location}}" />
+      <van-cell icon="clock" value-class="valueClass" title-class="titleClass" title="上课时间" label="{{ curCls.CourseTimeStr}}" />
+      <van-cell title-class="btnTitleClass">
+        <van-button 
+        class="btn" 
+        bindtap="onAddClsBtnTap" plain round hairline 
+        custom-style="font-size: 18px;" 
+        size="normal" 
+        icon="checked" 
+        type="primary">
+            添加到课表
+        </van-button>
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <view class="popFooter"></view>
+</van-popup>
+
+
+<view class="searchRelateContainer" wx:if="{{ showRelate && relatedClsList.length }}">
+  <scroll-view class="scroll-view_H" scroll-y="{{ true }}" style="height: 650rpx;">
+    <van-cell-group>
+      <van-cell 
+        clickable
+        use-label-slot 
+        bindtap="onCellTap"
+        id="{{index}}"
+        wx:for="{{ relatedClsList }}" 
+        wx:key='unique'
+        wx:if="{{ item.Type === '本' &&  item.StudentNum > 0}}" 
+        title="{{ item.CourseName }}"
+        title-class="cellTitleClass"
+        title-width="200px" 
+        value="{{ item.CourseId }}" >
+        <view slot="label">
+          <van-icon name="manager" />
+          <text class="teacherNameText">{{ item.TeacherName ? item.TeacherName : '暂无' }}</text>
+          <text class="stuNumText">学生数: {{ item.StudentNum }}</text>
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </scroll-view>
+</view>
+
+
+<image src="../../src/element/communication.png" class="commEle"></image>
+<image src="../../src/element/work.png" class="workEle2"></image>
+
+<van-toast id="van-toast" />
+<view wx:if="{{!(showRelate && relatedClsList.length)}}">
+  <text class="InfoText">尝试搜索课程吧</text>
+  <image src="../../src/element/planet.png" class="planetEle"></image>
+</view>
+
+<!-- 搜索卡片结果，也许不需要，联想搜索够用 -->
+<!-- 
+<view wx:elif="{{isSearch}}" class="mainCard">
+</view> 
+-->

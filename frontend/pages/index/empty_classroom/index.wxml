@@ -1,0 +1,113 @@
+<!--pages/index/empty_classroom/index.wxml-->
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+<van-calendar 
+    show-subtitle="{{ false }}"
+    show-confirm="{{ false }}"
+    max-date="{{ maxDate }}"
+    row-height="64"
+    poppable="{{ true }}" 
+    show="{{ datePickerShow }}" 
+    bind:close="onDatePickerClose" 
+    bind:confirm="onDatePickerConfirm" 
+    color="#4a69bd" 
+    type="single" 
+    class="calendar"
+/>
+
+<view class="headerCard">
+  <view class="header"></view>
+  <van-cell 
+    center 
+    clickable
+    custom-class="cellClass"
+    title-class="cellTitleClass" 
+    value-class="cellValueClass" 
+    size="large" 
+    title="选择日期" 
+    value="{{ date }}" 
+    bind:click="onDisplayDatePicker" 
+    border="{{ false }}">
+  </van-cell>
+  <!--  <van-stepper value="{{ currentDate }}" min="{{ minDate }}" max="8" />-->
+  <van-row class="headRowContainer">
+    <van-col span="4"><text class="headLabel">楼层</text></van-col>
+    <van-col span="20">
+      <scroll-view class="scroll-view_H" scroll-x="{{ true }}">
+        <view class="scroll-view_wapper">
+          <van-radio-group custom-class="radio_wapper" value="{{ floorRadio }}" bind:change="onFloorRadioChoose">
+            <van-radio wx:key="unique" wx:for="{{ floorList }}" use-icon-slot class="radio" name="{{index}}">
+              <van-tag custom-class="headtags"
+                       plain="{{floorRadio != index}}" 
+                       size="large" 
+                       color="{{floorRadio === index ? '#4a69bd' : '#0984e3'}}" 
+                       text-color="{{floorRadio === index ? '#ffffff' : '#1e3799'}}">
+                      {{ item }}
+              </van-tag>
+            </van-radio>
+          </van-radio-group>
+        </view>
+      </scroll-view>
+    </van-col>
+  </van-row>
+  <van-row class="headRowContainer">
+    <van-col span="4"><text class="headLabel">时段</text></van-col>
+    <van-col span="20">
+      <scroll-view class="scroll-view_H" scroll-x="{{ true }}" bindscroll="scroll">
+        <view class="scroll-view_wapper">
+          <van-radio-group custom-class="radio_wapper" value="{{ timeRadio }}" bind:change="ontimeRadioChoose">
+            <van-radio wx:key="unique" wx:for="{{ timeList }}" use-icon-slot class="radio" name="{{index}}">
+              <van-tag custom-class="headtags"
+                       plain="{{timeRadio != index}}" 
+                       size="large" 
+                       color="{{timeRadio === index ? '#4a69bd' : '#0984e3'}}" 
+                       text-color="{{timeRadio === index ? '#ffffff' : '#1e3799'}}">
+                      {{ item }}
+              </van-tag>
+            </van-radio>
+          </van-radio-group>
+        </view>
+      </scroll-view>
+    </van-col>
+  </van-row>
+  <van-row class="headRowContainer">
+    <van-col span="4"><text class="headLabel">节次</text></van-col>
+    <van-col span="20">
+      <scroll-view class="scroll-view_H" scroll-x="{{ true }}">
+        <view class="scroll-view_wapper">
+          <van-checkbox-group custom-class="radio_wapper" value="{{ clsChoocedIdx }}" checked-color="" bind:change="onClsCheckBoxChoose">
+            <van-checkbox wx:key="unique" wx:for="{{ 13 }}" use-icon-slot class="radio" name="{{index}}">
+              <van-tag custom-class="headtags"
+                       plain="{{ !clsCheckBox[index] }}" 
+                       size="large" 
+                       color="{{ clsCheckBox[index] ? '#4a69bd' : '#0984e3'}}" 
+                       text-color="{{ clsCheckBox[index] ? '#ffffff' : '#1e3799'}}">
+                      {{ index + 1 }}
+              </van-tag>
+            </van-checkbox>
+          </van-checkbox-group>
+        </view>
+      </scroll-view>
+    </van-col>
+  </van-row>
+  <view class="space"></view>
+</view>
+
+<view class="bodyCard">
+  <text class="empInfoText">空闲教室</text>
+  <view class="tagContainer">
+    <van-tag  id="{{ item }}" 
+              custom-class="{{ tagClass }}" 
+              wx:key="unique"
+              wx:for="{{empty_classroom}}" 
+              round size="large" 
+              color="#4a69bd"
+              type="primary"
+              bindtap="startStudy">
+              {{item}}
+    </van-tag>
+  </view>
+</view>
+
+
+<view class="footer"></view>

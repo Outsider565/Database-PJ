@@ -1,0 +1,74 @@
+/* pages/index/check_classroom/index.wxss */
+page{
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+}
+
+.headerCard{
+  padding-top: 18px;
+  padding-bottom: 15px;
+  margin-top: 3%;
+  margin-bottom: 15px;
+  background-color: white;
+  height: auto;
+  width: 92vw;
+  margin-inline: 4vw;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px #cccccc;
+  transform: translateY(-220rpx);
+}
+
+.space{
+  height: 200px;
+}
+
+.searchClass{
+  position: absolute;
+  width: 100vw;
+  z-index: 60;
+}
+
+.banner{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 750rpx;
+  max-height: 800px;
+  width: 750rpx;
+  max-width: 800px;
+  z-index: 0;
+
+}
+
+.InfoText{
+  position: absolute;
+  left: 10%;
+  top: 40%;
+  color: #192a56;
+  font-family: 'ZCOOL_h';
+  justify-content: center;
+  font-size: 30px;
+  z-index: -1;
+}
+
+.titleClass{
+  font-size: 18px;
+  color: black!important;
+}
+
+.cellTitleClass{
+  width: 200px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.stuNumText{
+  position: absolute;
+  right: 40rpx;
+}
+
+.teacherNameText{
+  padding-inline: 5px;
+}

@@ -1,0 +1,17 @@
+{
+  "backgroundColor": "#eeeeee",
+  "usingComponents": {
+    "van-datetime-picker": "../../src/dist/datetime-picker/index",
+    "van-toast": "../../src/dist/toast/index",
+    "van-button": "../../src/dist/button/index",
+    "van-icon": "../../src/dist/icon/index",
+    "van-divider": "../../src/dist/divider/index",
+    "van-cell": "../../src/dist/cell/index",
+    "van-cell-group": "../../src/dist/cell-group/index",
+    "van-popup": "../../src/dist/popup/index",
+    "van-field": "../../src/dist/field/index",
+    "van-picker": "../../src/dist/picker/index",
+    "van-swipe-cell": "../../src/dist/swipe-cell/index",
+    "van-action-sheet": "../../src/dist/action-sheet/index"
+  }
+}
