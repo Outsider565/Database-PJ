@@ -1,0 +1,79 @@
+# 提交注释：本文件中已经脱敏了需要上线软件的部分信息，运行时需要填入有效的（微信开发者）注册信息
+version: "3"
+
+services:
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: passwd # need to change
+      POSTGRES_DB: gostudy
+      TZ: Asia/Shanghai
+    ports:
+      - 5678:5432
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
+  apiservice:
+    build:
+      ./apiservice
+    volumes:
+      - ./apiservice:/usr/src/app
+    depends_on:
+      - db
+    ports:
+      - 1234:1234
+    environment:
+      GOPROXY: https://goproxy.cn,direct
+      DEBUG: 'FALSE'
+      TZ: Asia/Shanghai
+      GIN_MODE: release
+      TEST_INSERT: 'TRUE'
+      TEST_REINIT: 'TRUE'
+      ISSUER: apiserver
+      SECRET: ExampleSecret
+      APPID: ExampleAppID
+      APPSECRET: ExampleAppSecret
+      ADMIN_ID: ExampleADMIN_ID
+      ADMIN_PASSWD: ExampleADMIN_PASSWD
+      TEST_WX: 'FALSE' # WARNING: it's unsecure and need to turn off in production
+
+  nginx:
+    depends_on:
+      - apiservice
+      - admin
+    build:
+      ./nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/cert:/cert
+      # Try to add nginx static
+    environment:
+      TZ: Asia/Shanghai
+
+  redis:
+    image: redis:6
+    command: redis-server --requirepass passwd
+    ports: 
+     - 6379:6379
+
+  admin: 
+    build: 
+      ./admin
+    volumes: 
+      - ./admin:/code
+    depends_on: 
+      - db
+    ports: 
+      - 8000:8000
+    command: python manage.py runserver 0.0.0.0:8000
+    environment: 
+      DJANGO_SUPERUSER_USERNAME: root
+      DJANGO_SUPERUSER_PASSWORD: password
+      DJANGO_SUPERUSER_EMAIL: test@fudan.edu.cn
+
+    

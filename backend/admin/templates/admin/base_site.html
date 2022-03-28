@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('GO STUDY管理页面') }}{% endblock %}
+
+{% block extrahead %}
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/Outsider565/ImageBed@master/20210610210343.png" />
+{% endblock %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('GO STUDY管理页面') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
